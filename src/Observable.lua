@@ -626,11 +626,9 @@ function Observable:concat<R>(...: Observable<R>): Observable<R>
 						subscription = nil
 						observer:complete()
 					else
-						startNext(C.from(sources[(function()
-							local result = index
-							index += 1
-							return result
-						end)()]))
+						local current = index
+						index += 1
+						startNext(C.from(sources[current]))
 					end
 				end,
 			})
