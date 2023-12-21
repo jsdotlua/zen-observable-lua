@@ -2,11 +2,8 @@
 -- ROBLOX upstream for types: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/zen-observable/index.d.ts
 --!strict
 
-local srcWorkspace = script.Parent
-local rootWorkspace = srcWorkspace.Parent
-
-local LuauPolyfill = require(rootWorkspace.LuauPolyfill)
-local Promise = require(rootWorkspace.Promise)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
+local Promise = require("@pkg/@jsdotlua/promise")
 local instanceOf = LuauPolyfill.instanceof
 local Boolean = LuauPolyfill.Boolean
 local Error = LuauPolyfill.Error

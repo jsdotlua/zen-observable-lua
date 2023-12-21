@@ -1,6 +1,6 @@
 --!strict
 local exports = {}
-local ObservableModule = require(script.Observable)
+local ObservableModule = require("./Observable")
 local Observable = ObservableModule.Observable
 exports.Observable = Observable
 
