@@ -137,6 +137,10 @@ jobs:
             path: build/zen-observable.lua
             asset-type: text/plain
 
+          - artifact-name: zen-observable-dev.lua
+            path: build/debug/zen-observable.lua
+            asset-type: text/plain
+
     steps:
       - uses: actions/checkout@v4
 
