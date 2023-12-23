@@ -4,3 +4,9 @@ sourcemap.json
 rotriever.lock
 *.rbxmx
 *.rbxm
+
+**/sourcemap.json
+**/node_modules
+/build
+/roblox
+.yarn

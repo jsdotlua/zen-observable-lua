@@ -2,11 +2,8 @@
 -- ROBLOX upstream for types: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/zen-observable/index.d.ts
 --!strict
 
-local srcWorkspace = script.Parent
-local rootWorkspace = srcWorkspace.Parent
-
-local LuauPolyfill = require(rootWorkspace.LuauPolyfill)
-local Promise = require(rootWorkspace.Promise)
+local LuauPolyfill = require("@pkg/@jsdotlua/luau-polyfill")
+local Promise = require("@pkg/@jsdotlua/promise")
 local instanceOf = LuauPolyfill.instanceof
 local Boolean = LuauPolyfill.Boolean
 local Error = LuauPolyfill.Error
@@ -629,11 +626,9 @@ function Observable:concat<R>(...: Observable<R>): Observable<R>
 						subscription = nil
 						observer:complete()
 					else
-						startNext(C.from(sources[(function()
-							local result = index
-							index += 1
-							return result
-						end)()]))
+						local current = index
+						index += 1
+						startNext(C.from(sources[current]))
 					end
 				end,
 			})
